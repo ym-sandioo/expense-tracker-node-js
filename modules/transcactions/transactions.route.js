@@ -9,6 +9,8 @@ module.exports = transactionRouter;
 transactionRouter.use(auth);
 transactionRouter.post('/add-balance', transaction.addBalance);
 transactionRouter.post('/add-expense', transaction.addExpense);
-transactionRouter.get('/', transaction.gettransaction);
+transactionRouter.get('/', transaction.getTransaction);
+transactionRouter.delete('/:transactionId', transaction.deleteTransaction);
+transactionRouter.patch('/:transactionId', transaction.updateTransaction);
 
 module.exports = transactionRouter;
